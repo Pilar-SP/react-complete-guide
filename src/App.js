@@ -1,5 +1,6 @@
+import React from "react"; // No needed but pasted to rememeber that jsx html elements are syntactic sugar from the original React.createElement()
 import "./App.css";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   const expenses = [
