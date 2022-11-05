@@ -26,10 +26,18 @@ function App() {
     },
   ];
 
-  const addExpenseHandler = (expense) => {
-    console.log(expense);
+  const updatedExpenses = (expense) => {
+    const updatedExpenses = [expense, ...expenses];
+    console.log(updatedExpenses);
   };
 
+  const addExpenseHandler = (expense) => {
+    console.log(expense);
+    updatedExpenses(expense);
+    // Desviandome del asunto
+  };
+
+  // Completamente desviada
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
