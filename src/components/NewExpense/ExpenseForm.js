@@ -5,7 +5,6 @@ import "./ExpenseForm.css";
 // think of props as an object that passes data from one component to another
 // if a component receives props then wherever the component is rendered (called) will accept attributes
 const ExpenseForm = (props) => {
-  // it a fricking function
   const [enteredTitle, setEnteredTitle] = useState("");
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -31,7 +30,6 @@ const ExpenseForm = (props) => {
     // this is passing the newly created object expenseData as argument to the function
     // saveExpenseDataHandler which lives in the parent component (NewExpense)
     props.onSaveExpenseData(expenseData);
-    // console.log(expenseData);
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
@@ -70,6 +68,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        {/* <button type="button">Cancel</button> */}
         <button type="submit">Add Expense</button>
       </div>
     </form>

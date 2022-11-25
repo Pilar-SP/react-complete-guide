@@ -14,8 +14,7 @@ const NewExpense = (props) => {
 
   return (
     <div className="new-expense">
-      {/* onSaveExpenseData will be the props to use in the child component ExpenseForm to access the */}
-      {/* function passed (saveExpenseDataHandler) */}
+      {/* onSaveExpenseData will be the props to use in the child component ExpenseForm to access the function passed (saveExpenseDataHandler) */}
       <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
