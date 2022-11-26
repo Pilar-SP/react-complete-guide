@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
 
 import "./NewExpense.css";
 
 const NewExpense = (props) => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const expandIsFormOpen = () => {
+    setIsFormOpen(true);
+  };
+
+  const cancelIsFormOpen = () => {
+    setIsFormOpen(false);
+  };
+
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
@@ -14,8 +24,17 @@ const NewExpense = (props) => {
 
   return (
     <div className="new-expense">
-      {/* onSaveExpenseData will be the props to use in the child component ExpenseForm to access the function passed (saveExpenseDataHandler) */}
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      {!isFormOpen && (
+        <button type="button" onClick={expandIsFormOpen}>
+          Add New Expense
+        </button>
+      )}
+      {isFormOpen && (
+        <ExpenseForm
+          onSaveExpenseData={saveExpenseDataHandler}
+          onClick={cancelIsFormOpen}
+        />
+      )}
     </div>
   );
 };
